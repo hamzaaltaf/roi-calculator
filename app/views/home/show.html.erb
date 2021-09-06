@@ -4,15 +4,15 @@
     <div class="container-fluid d-flex container">
 
       <div class="logo mr-auto">
-        <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid ml-5"></a>
-        <a href="<%= home_show_path %>"><%= image_tag "logo.png", class:"img-fluid ml-5"%></a>
+        <a href="https://tablepointer.com"><%= image_tag "", class:"img-fluid ml-5"%></a>
+        <a href="https://tablepointer.com"><%= image_tag "logo.svg", class:"img-fluid ml-5", style: "width: 140px; height: 120px;"%></a>
       </div>
 
       <nav class="nav-menu d-none d-lg-block" style="padding-right: 0px">
         <ul>
-          <li class="active"><a href="#header">Solution</a></li>
-          <li><a href="#about">About </a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li class="active"><a href="https://www.tablepointer.com/solutions">Solution</a></li>
+          <li><a href="https://www.tablepointer.com/about-1">About </a></li>
+          <li><a href="https://www.tablepointer.com/contact-us">Contact Us</a></li>
         </ul>
       </nav>
     </div>
@@ -29,48 +29,51 @@
        
               <div class="form-group mt-4">
                 <label for="name">Average revenue per location:</label>
-                <input style="border-color:#969CD7" type="text" class="form-control" name="revenue" id="revenue" />
+                <input style="border-color:#969CD7" type="text" class="form-control" name="revenue" id="revenue" placeholder="$1000000" value="$1000000" />
               </div>
               <div class="form-group">
                 <label for="name">Number of locations:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="3"  value="3"/>
               </div>
               <div class="form-group">
                 <label for="name">Yearly equipment issues/failures:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="2" value="2" />
               </div>
               <div class="form-group">
                 <label for="name">Number of manual temperature checks per day:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="4"  value="4"/>
               </div>
               <div class="form-group">
                 <label for="name">Pieces of equipment temperature checked:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="4" value="4"/>
               </div>
               <div class="form-group">
                 <label for="name">Hourly wage for employee checking temperatures:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="$10"  value="$10"/>
               </div>
               <div class="form-group">
                 <label for="name">Monthly electricity bill</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="$4000"  value="$4000"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="name">Number of kitchen exhausts:</label>
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue"  placeholder="2" value="2"/>
               </div>
               <div class="form-group">
-                <label for="name">Number of locations:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
+                <label for="name">Number of aircons:</label>
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="3" value="3" />
               </div>
               <div class="form-group">
-                <label for="name">Number of Exhausts:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
+                <label for="name">Number of freezers:</label>
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="3" value="3"/>
               </div>
+
               <div class="form-group">
-                <label for="name">Number of ACs:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
+                <label for="name">Number of chillers:</label>
+                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="3" value="3" />
               </div>
-              <div class="form-group">
-                <label for="name">Number of Fridges:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" />
-              </div>
+              
         
 
             </form>
@@ -95,7 +98,7 @@
 
             </ul>
 
-            <div  class="text-center mt-5"><button type="button" style="background-color: #FF6F00; border: 0px; color: white; font-family: Work Sans; font-size: 18px; font-weight: 600;" class="px-5 py-3">Start Saving Today</button></div>
+            <div  class="text-center mt-5"><button href="https://www.tablepointer.com/contact-us" type="button" style="background-color: #FF6F00; border: 0px; color: white; font-family: Work Sans; font-size: 18px; font-weight: 600;" class="px-5 py-3">Start saving today</button></div>
           </div>
         </div>
 
@@ -142,6 +145,16 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   background: #fff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 
+}
+
+.unit {
+  position: absolute;
+    display: block;
+    left: 24px;
+    top: 16px;
+    z-index: 9;
+    color: rgba(25,40,63,.8);
+    font-size: 16px;
 }
 
 #header .logo h1 {
