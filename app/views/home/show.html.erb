@@ -25,63 +25,68 @@
         <div class="row">
           <div class="col-md-7">
             <h2 class="mt-5 ml-5" style="font-family:DM Sans; line-height: 52px; font-size: 30px; font-weight: 700; color: #1A237E;">Calculate how much TablePointer will save you each year</h2>
-            <form action="forms/contact.php" method="post" role="form" class="ml-5 mr-5">
+            <%= form_tag(calculate_path, class:"ml-5 mr-5") do |f| %>
+            
        
               <div class="form-group mt-4">
                 <label for="name">Average revenue per location:</label>
-                <input style="border-color:#969CD7" type="text" class="form-control" name="revenue" id="revenue" placeholder="$1000000" value="$1000000" />
+                <%= number_field_tag :avg_rev, 1000000 , min: 0, class: "form-control", id: 'roi__calc__avg_rev', placeholder: '100000', style:"border-color:#969CD7"%>
               </div>
+
               <div class="form-group">
                 <label for="name">Number of locations:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="3"  value="3"/>
+                <%= number_field_tag :locations, 1 , class: "form-control" , min: 0, id: 'roi__calc__locations', placeholder: '1', style:"border-color:#969CD7"%>
+                
               </div>
               <div class="form-group">
                 <label for="name">Yearly equipment issues/failures:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="2" value="2" />
+                <%= number_field_tag :issues, 2 , class: "form-control", id: 'roi__calc__issues', min: 0, placeholder: '3', style:"border-color:#969CD7"%>
+                <span id="roi__calc__error__issues" style="color: red; font-size: 11px; border: 0px solid red !important;"></span>
               </div>
               <div class="form-group">
                 <label for="name">Number of manual temperature checks per day:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="4"  value="4"/>
+                <%= number_field_tag :manual_checks, "4" ,  class: "form-control", id: 'roi__calc__manual_checks' , min: 0, placeholder: '4', style:"border-color:#969CD7"%>
               </div>
               <div class="form-group">
                 <label for="name">Pieces of equipment temperature checked:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="4" value="4"/>
+                <%= number_field_tag :pieces, 4 , class: "form-control", id: 'roi__calc__pieces', placeholder: '4' , min: 0, style:"border-color:#969CD7"%>
+                
               </div>
               <div class="form-group">
                 <label for="name">Hourly wage for employee checking temperatures:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="$10"  value="$10"/>
+                <%= number_field_tag :wage, 10 , class: "form-control", id: 'roi__calc__wage', placeholder: '10', min: 0, style:"border-color:#969CD7"%>
+                <span id="roi__calc__wage__error" style="color: red; font-size: 11px"></span>
               </div>
               <div class="form-group">
                 <label for="name">Monthly electricity bill:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="$4000"  value="$4000"/>
+                <%= number_field_tag :bill, 3000 , class: "form-control", id: 'roi__calc__bill', placeholder: '3000', min: 0, style:"border-color:#969CD7"%>
               </div>
               
               <div class="form-group">
                 <label for="name">Number of kitchen exhausts:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue"  placeholder="2" value="2"/>
+                <%= number_field_tag :exhausts, 1 , class: "form-control", id: 'roi__calc__exhausts', placeholder: '2', min: 0, style:"border-color:#969CD7"%>
               </div>
               <div class="form-group">
                 <label for="name">Number of aircons:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="3" value="3" />
+                <%= number_field_tag :aircons, 1 , class: "form-control", id: 'roi__calc__aircons', placeholder: '3', min: 0, style:"border-color:#969CD7"%>
               </div>
               <div class="form-group">
                 <label for="name">Number of freezers:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="3" value="3"/>
+                <%= number_field_tag :freezers, 1 , class: "form-control", id: 'roi__calc__freezers', placeholder: '3', min: 0, style:"border-color:#969CD7"%>
               </div>
 
               <div class="form-group">
                 <label for="name">Number of chillers:</label>
-                <input style="border-color:#969CD7"  type="text" class="form-control" name="revenue" id="revenue" placeholder="3" value="3" />
+                <%= number_field_tag :chillers, 1 , class: "form-control", id: 'roi__calc__chillers', placeholder: '3', min: 0, style:"border-color:#969CD7"%>
               </div>
+              <br>
               
-        
-
-            </form>
+            <% end %>
           </div>
           <div style="background-color: #1A237E;" class="col-md-5">
           <div class="mt-5 mx-4">
             <h2 style="color: white; font-size: 17px;">You'll save</h2>
-            <h2 style="color: white; font-size: 70px; font-weight: 600; font-family: Work Sans bold;"><strong>$15,111</strong></h2>
+            <h2 id ="saving_value" style="color: white; font-size: 70px; font-weight: 600; font-family: Work Sans bold;"><strong>$12,540</strong></h2>
             <h2 style="color: white; font-size: 17px;">each year</h2>
             <h2 class="mt-5" style="color: white; font-size: 18px; font-weight: 500; font-family: DM Sans; padding-top: 49px;">Improve your bottom line, while protecting your business and your customers.</h2>
             <h2 class="mt-4" style="color: white; font-size: 18px; font-weight: 500; font-family: DM Sans; padding-top: 19px;">TablePointer saves you thousands each year by:</h2>
@@ -106,6 +111,54 @@
       </div>
     </section>
   </main>
+
+  <script>
+    $(document).ready(function() {
+      $("[id^=roi__calc__]").change(function(){
+        
+        var issues = $("#roi__calc__issues").val();
+        var locations = $("#roi__calc__locations").val();
+        var manual_checks = $("#roi__calc__manual_checks").val();
+        var wage = $("#roi__calc__wage").val();
+        var pieces = $("#roi__calc__pieces").val();
+        var bill = $("#roi__calc__bill").val();
+        var exhausts = $("#roi__calc__exhausts").val();
+        var aircons = $("#roi__calc__aircons").val();
+        var freezers = $("#roi__calc__freezers").val();
+        var chillers = $("#roi__calc__chillers").val();
+        
+        $.ajax({
+          url: "/calculate",
+          type: "POST",
+          data: {issues: issues, locations: locations, manual_checks: manual_checks, wage: wage, pieces: pieces, bill: bill, exhausts: exhausts, aircons: aircons, freezers: freezers, chillers: chillers},
+          success: function (data, status, jqXHR) {
+            console.log(data)
+            if (data.error == true) {
+              console.log(data.field)
+              $(data.field).css('border', "1px solid red");
+              $("#saving_value").html(data.total);  
+            } else {
+              $("#saving_value").html(data.total);
+              $("[id^=roi__calc__]").each(function() {
+                $(this).css('border', "1px solid #969CD7");
+              });
+              $("[id^=roi__calc__error__]").each(function() {
+                $(this).html("");
+              });
+              
+              
+            }
+            
+          },
+          error: function (jqXHR, status, err) {
+            alert("Local error callback.");
+          },
+          complete: function (jqXHR, status) {
+          }
+        })
+      });
+      });
+  </script>
   <style>
     
 body {
